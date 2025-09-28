@@ -10,6 +10,10 @@ env:
   REGISTRY: public.ecr.aws
   IMAGE_NAME: game-2048
 
+defaults:
+  run:
+    working-directory: game
+
 jobs:
   test:
     runs-on: ubuntu-latest
