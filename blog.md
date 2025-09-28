@@ -2,7 +2,7 @@
 
 *Building a production-ready 2048 game with AWS cloud services, Kubernetes, GitOps, and modern DevOps practices*
 
-![2048 game in the cloud](img/flow.png)
+![2048 game in the cloud](https://raw.githubusercontent.com/HasanAshab/2048-game-devops/master/img/flow.png)
 
 ---
 
@@ -134,7 +134,7 @@ The service automatically provisions an AWS Network Load Balancer, providing:
 - **Cross-AZ load balancing** for fault tolerance
 
 ## Step 3: AWS-Integrated CI/CD Pipeline
-![CI/CD Pipeline](img/cicd.png)
+![CI/CD Pipeline](https://raw.githubusercontent.com/HasanAshab/2048-game-devops/master/img/cicd.png)
 
 The GitHub Actions workflow seamlessly integrates with AWS services for a complete deployment pipeline:
 
