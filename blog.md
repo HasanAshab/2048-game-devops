@@ -428,18 +428,28 @@ This project shows that the same AWS architecture patterns used by startups and 
 4. **Infrastructure as Code** with Terraform ensures consistency
 5. **Cost optimization** is built into AWS service design
 
-## Try It Yourself
+## Deploy Your Own AWS 2048
 
-Ready to build your own enterprise-grade deployment pipeline? Here's how to get started:
+Ready to experience AWS DevOps in action? Here's your deployment checklist:
 
-1. **Fork the repository** and customize it for your application
-2. **Set up AWS credentials** and create an ECR repository
-3. **Deploy ArgoCD** to your Kubernetes cluster
-4. **Configure the pipeline** with your repository details
-5. **Push a change** and watch the magic happen
+1. **AWS Account Setup** - Ensure you have appropriate IAM permissions
+2. **Terraform Apply** - Deploy the EKS cluster and ECR repository
+3. **ArgoCD Installation** - Install ArgoCD on your EKS cluster
+4. **GitHub Secrets** - Configure AWS credentials for CI/CD
+5. **Git Push** - Watch your 2048 game deploy automatically!
+
+### AWS Costs to Consider
+- **EKS Cluster**: ~$72/month for control plane
+- **EC2 Instances**: ~$30-100/month depending on node size
+- **ECR Storage**: ~$1/month for container images
+- **Data Transfer**: Minimal for this application
 
 The complete source code, documentation, and step-by-step guides are available in the repository. Whether you're a DevOps engineer looking to learn new tools or a developer wanting to understand deployment pipelines, this project provides a hands-on learning experience with real-world applications.
 
 ---
 
-**What's your experience with DevOps pipelines? Have you built similar projects? Share your thoughts and experiences in the comments below!**
+**Have you deployed applications on AWS EKS? What's been your experience with ArgoCD and GitOps? Share your AWS DevOps journey in the comments!**
+
+---
+
+*Tags: #AWS #EKS #ArgoCD #DevOps #GitOps #ECR #Kubernetes #CloudNative #Terraform #2048*
