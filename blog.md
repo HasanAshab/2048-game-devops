@@ -2,6 +2,8 @@
 
 *Building a production-ready 2048 game with AWS cloud services, Kubernetes, GitOps, and modern DevOps practices*
 
+![2048 game in the cloud](img/flow.png)
+
 ---
 
 ## TL;DR
@@ -132,6 +134,7 @@ The service automatically provisions an AWS Network Load Balancer, providing:
 - **Cross-AZ load balancing** for fault tolerance
 
 ## Step 3: AWS-Integrated CI/CD Pipeline
+![CI/CD Pipeline](img/cicd.png)
 
 The GitHub Actions workflow seamlessly integrates with AWS services for a complete deployment pipeline:
 
@@ -449,7 +452,3 @@ The complete source code, documentation, and step-by-step guides are available i
 ---
 
 **Have you deployed applications on AWS EKS? What's been your experience with ArgoCD and GitOps? Share your AWS DevOps journey in the comments!**
-
----
-
-*Tags: #AWS #EKS #ArgoCD #DevOps #GitOps #ECR #Kubernetes #CloudNative #Terraform #2048*

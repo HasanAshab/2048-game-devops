@@ -3,7 +3,7 @@
 A fully containerized and cloud-native implementation of the classic 2048 game with complete CI/CD pipeline, Kubernetes deployment, and Infrastructure as Code.
 
 ## 🏗️ Architecture Overview
-
+![Architecture Diagram](img/flow.png)
 This project demonstrates modern DevOps practices with:
 - **Containerization** with Docker
 - **Kubernetes** orchestration
@@ -61,6 +61,8 @@ kubectl apply -f argocd/application.yaml
 ```
 
 ## 🔄 CI/CD Pipeline
+
+![CI/CD Pipeline](img/cicd.png)
 
 The GitHub Actions workflow automatically:
 
