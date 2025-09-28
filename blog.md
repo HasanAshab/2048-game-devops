@@ -16,7 +16,7 @@ This project turned the classic 2048 game into a cloud-native demo running on AW
 * ArgoCD for GitOps deployments
 * Terraform for infrastructure as code
 
-**🔗 [Source code on GitHub](#)**
+**🔗 [Source code on GitHub](https://github.com/HasanAshab/2048-game-devops)**
 
 
 ## Why 2048?
