@@ -1,0 +1,65 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: game-2048-project
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: Project for 2048 game applications
+  
+  # Source repositories
+  sourceRepos:
+  - 'https://github.com/*/2048-game'  # Replace with your actual repo
+  - 'https://github.com/*/2048-game.git'
+  
+  # Destination clusters and namespaces
+  destinations:
+  - namespace: default
+    server: https://kubernetes.default.svc
+  - namespace: game-2048
+    server: https://kubernetes.default.svc
+  - namespace: production
+    server: https://kubernetes.default.svc
+  - namespace: staging
+    server: https://kubernetes.default.svc
+  
+  # Cluster resource allow list
+  clusterResourceWhitelist:
+  - group: ''
+    kind: Namespace
+  - group: 'networking.k8s.io'
+    kind: Ingress
+  
+  # Namespace resource allow list
+  namespaceResourceWhitelist:
+  - group: ''
+    kind: Service
+  - group: ''
+    kind: ConfigMap
+  - group: ''
+    kind: Secret
+  - group: 'apps'
+    kind: Deployment
+  - group: 'apps'
+    kind: ReplicaSet
+  - group: 'networking.k8s.io'
+    kind: Ingress
+  
+  # Roles for project members
+  roles:
+  - name: admin
+    description: Admin privileges for game-2048 project
+    policies:
+    - p, proj:game-2048-project:admin, applications, *, game-2048-project/*, allow
+    - p, proj:game-2048-project:admin, repositories, *, *, allow
+    groups:
+    - game-2048-admins
+  
+  - name: developer
+    description: Developer access for game-2048 project
+    policies:
+    - p, proj:game-2048-project:developer, applications, get, game-2048-project/*, allow
+    - p, proj:game-2048-project:developer, applications, sync, game-2048-project/*, allow
+    groups:
+    - game-2048-developers

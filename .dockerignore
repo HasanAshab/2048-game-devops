@@ -1,0 +1,11 @@
+.git
+.github
+k8s
+node_modules
+*.md
+Dockerfile
+.dockerignore
+.gitignore
+Rakefile
+package.json
+package-lock.json

@@ -1,0 +1,18 @@
+{
+  "name": "2048-game",
+  "version": "1.0.0",
+  "description": "2048 game with DevOps pipeline",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo 'No tests specified yet'",
+    "lint": "jshint js/*.js",
+    "build": "docker build -t game-2048 .",
+    "serve": "docker run -p 8080:80 game-2048"
+  },
+  "devDependencies": {
+    "jshint": "^2.13.6"
+  },
+  "keywords": ["game", "2048", "javascript"],
+  "author": "",
+  "license": "MIT"
+}

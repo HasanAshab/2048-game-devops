@@ -1,0 +1,62 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: game-2048
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  labels:
+    app: game-2048
+    environment: production
+spec:
+  project: game-2048-project
+  
+  source:
+    repoURL: https://github.com/your-username/2048-game  # Replace with your actual repo
+    targetRevision: main
+    path: k8s
+    
+    # Use Kustomize for deployment
+    kustomize:
+      images:
+      - name: game-2048
+        newName: 123456789012.dkr.ecr.us-east-1.amazonaws.com/game-2048
+        newTag: latest
+  
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: false
+    syncOptions:
+    - CreateNamespace=true
+    - PrunePropagationPolicy=foreground
+    - PruneLast=true
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m
+  
+  revisionHistoryLimit: 10
+  
+  # Health check configuration
+  ignoreDifferences:
+  - group: apps
+    kind: Deployment
+    jsonPointers:
+    - /spec/replicas
+  
+  # Notification configuration
+  info:
+  - name: 'Description'
+    value: '2048 Game Application'
+  - name: 'Owner'
+    value: 'DevOps Team'
+  - name: 'Repository'
+    value: 'https://github.com/your-username/2048-game'
