@@ -1,14 +1,12 @@
-# 2048 in the Cloud: DevOps with AWS & ArgoCD
-
 *Overengineering a simple game to practice real-world DevOps skills*
-
-![2048 game in the cloud](https://raw.githubusercontent.com/HasanAshab/2048-game-devops/master/img/flow.png)
 
 ---
 
 ## TL;DR
 
 Yes, I know — nobody needs Kubernetes, Terraform, and ArgoCD to run 2048. It's overkill. But that's exactly why I did it. By deploying a simple static game with enterprise-grade tools, I could focus purely on **DevOps patterns** without being distracted by app complexity.
+
+![2048 game in the cloud](https://raw.githubusercontent.com/HasanAshab/2048-game-devops/master/img/flow.png)
 
 This project turned the classic 2048 game into a cloud-native demo running on AWS with:
 
