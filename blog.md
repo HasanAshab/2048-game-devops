@@ -1,3 +1,5 @@
+# 2048 in the Cloud: DevOps with AWS & ArgoCD
+
 *Overengineering a simple game to practice real-world DevOps skills*
 
 ---
